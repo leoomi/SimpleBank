@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"log"
 
-	server "github.com/leoomi/simplebank/api"
+	"github.com/leoomi/simplebank/api"
 	db "github.com/leoomi/simplebank/db/sqlc"
 	"github.com/leoomi/simplebank/util"
 	_ "github.com/lib/pq"
@@ -22,7 +22,7 @@ func main() {
 	}
 
 	store := db.NewStore(conn)
-	server := server.NewServer(store)
+	server := api.NewServer(store)
 
 	err = server.Start(config.ServerAddress)
 	if err != nil {
