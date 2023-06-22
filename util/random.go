@@ -34,14 +34,19 @@ func RandomOwner() string {
 	return RandomString(12)
 }
 
+func RandomEmail() string {
+	return RandomString(12) + "@" + RandomString(5) + ".com"
+}
+
 func RandomMoney() int64 {
 	return RandomInt(0, 10000)
 }
 
 func RandomCurrency() string {
 	currencies := []string{
-		"USD",
-		"EUR",
+		USD,
+		EUR,
+		CAD,
 	}
 
 	return currencies[random.Intn(len(currencies))]
