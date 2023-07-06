@@ -8,10 +8,13 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-    name: test
+    name: Deploy
     runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
       - name: Configure AWS credentials
