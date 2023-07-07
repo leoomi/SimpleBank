@@ -20,6 +20,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Rewrite environment file
+        run: |
+          echo "${{ secrets.PRODUCTION_ENV }}" > ./app.env
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
